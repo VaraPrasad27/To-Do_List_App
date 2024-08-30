@@ -59,7 +59,7 @@ header h1 {
 
 .todo button {
   position: absolute;
-  right: -13px;
+  right: -15px;
   bottom: 13px;
   background-color: #eee;
   color: #f5ba13;
@@ -69,6 +69,10 @@ header h1 {
   height: 36px;
   cursor: pointer;
   outline: none;
+}
+
+li {
+  list-style: none;
 }
 
 .create-todo {
@@ -108,4 +112,24 @@ header h1 {
 
 .create-todo button:hover {
   color: #f5ba13;
+}
+
+.edit input {
+  width: 85%;
+  border: gray solid thin;
+  border-radius: 5px;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  resize: none;
+}
+
+.edit .done {
+  position: relative;
+  right: 5px;
+  bottom: 1.5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }

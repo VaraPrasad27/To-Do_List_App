@@ -12,6 +12,18 @@ function App() {
     });
   }
 
+  function editTodo(id, updatedTodo) {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todoItem, index) => {
+        if (index === id) {
+          return updatedTodo;
+        } else {
+          return todoItem;
+        }
+      });
+    });
+  }
+
   function deleteTodo(id) {
     setTodos((prevTodos) => {
       return prevTodos.filter((todoItem, index) => {
@@ -32,6 +44,7 @@ function App() {
                 key={index}
                 id={index}
                 content={todoItem}
+                onEdit={editTodo}
                 onDelete={deleteTodo}
               />
             </li>
