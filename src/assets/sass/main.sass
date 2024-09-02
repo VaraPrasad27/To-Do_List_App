@@ -1,0 +1,106 @@
+$primary-color: #f5ba13
+$secondary-color: #fff
+
+=button-style($r,$b,$bgc,$c)
+    position: absolute
+    right: $r
+    bottom: $b
+    background-color: $bgc
+    color: $c
+    border: none
+    border-radius: 50%
+    width: 36px
+    height: 36px
+    cursor: pointer
+    outline: none
+
+*
+    margin: 0
+    padding: 0
+
+html
+    font-family: "Montserrat", sans-serif
+
+body
+    background: #eee
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png")
+    padding: 0 16px
+
+header
+    background-color: $primary-color
+    margin: auto -16px
+    padding: 16px 32px
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3)
+    h1
+        color: $secondary-color
+        font-family: "McLaren", cursive
+        font-weight: 200
+
+li
+    list-style: none
+
+.todo
+    position: relative
+    width: 400px
+    margin: 30px auto 20px auto
+    background: $secondary-color
+    padding: 15px
+    border-radius: 7px
+    box-shadow: 0 2px 5px #ccc
+    div
+        display: flex
+        gap: 20px
+    button
+        +button-style(-15px,13px,#eee,$primary-color)
+
+.create-todo
+    position: relative
+    width: 480px
+    margin: 30px auto 20px auto
+    background: $secondary-color
+    padding: 15px
+    border-radius: 7px
+    box-shadow: 0 1px 5px rgb(138, 137, 137)
+    input
+        width: 100%
+        border: none
+        padding: 4px
+        outline: none
+        font-size: 1.2rem
+        font-family: inherit
+        resize: none
+    button
+        +button-style(18px,-18px,$primary-color,$secondary-color)
+        &:hover
+            color: $primary-color
+
+.edit
+    input
+        width: 85%
+        border: gray solid thin
+        border-radius: 5px
+        padding: 4px
+        outline: none
+        font-size: 1.2rem
+        font-family: inherit
+        resize: none
+    .done
+        position: relative
+        right: 5px
+        bottom: 1.5px
+        width: 36px
+        height: 36px
+        border-radius: 50%
+
+%line-style
+    font-size: 1.1em
+    font-weight: lighter
+    margin-bottom: 6px
+    margin-top: 6px
+.noLine
+    @extend  %line-style
+.line
+    @extend  %line-style
+    text-decoration: line-through
+    text-decoration-thickness: 2px
+    color: #bebebe
